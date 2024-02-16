@@ -4,7 +4,7 @@
     {{ task.description }}
   </li>
 </ul> -->
-<button (click)="openModal()">Add New Task</button>
+<button class="button-style" (click)="openModal()">Add New Task</button>
 <app-add-new-task *ngIf="isModalOpen" (addTask)="addTask($event)" (closeTask)="closeTask($event)"></app-add-new-task>
 <table>
   <thead>

@@ -45,9 +45,10 @@ export class TaskListComponent {
     console.log(`View item with id ${id}`);
   }
 
-  deleteItem(id: number) {
-    // this.dataService.deleteItem(id);
-    // this.data = this.dataService.getData();
+  deleteItem(id: number): void {
+    this.taskService.deleteTask(id).subscribe(() => {
+      this.tasks = this.tasks.filter(task => task.id !== id);
+    });
   }
   onStatusChange(element: Task) {
     // Implement logic for status change, if needed

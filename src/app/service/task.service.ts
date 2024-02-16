@@ -26,4 +26,9 @@ export class TaskService {
   updateTask(task: any): Observable<any> {
     return this.http.patch<any>(`${this.apiUrl}/${task.id}`, task);
   }
+
+  deleteTask(id: number): Observable<any> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.delete<any>(url);
+  }
 }
