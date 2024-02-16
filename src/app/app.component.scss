@@ -1,0 +1,80 @@
+:host {
+    // font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  p {
+    margin: 0;
+  }
+  
+  .body {
+    background-color: #E9EBEC;
+    height: 100%;
+  }
+  
+  .toolbar {
+    // position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #2A2A35;
+    color: white;
+    font-weight: 600;
+  
+    span {
+      font-size: var(--fontSize);
+      font-family: var(--poppinsSemiBold);
+    }
+  }
+  
+  .toolbar img {
+    margin: 0 16px;
+  }
+  
+  // .content {
+  //   // display: block;
+  //   // margin: 50px auto;
+  //   // width: 50%;
+  // }
+  
+  .menu-list {
+    display: flex;
+    list-style-type: none;
+    column-gap: 20px;
+    background-color: darkgray;
+    height: 26px;
+    padding: 10px;
+    margin: 0px;
+  
+    a {
+      text-decoration: none;
+      color: slategrey;
+      cursor: pointer;
+    }
+  
+    a:active {
+      color: white;
+    }
+  
+    .report {
+      border: none;
+      background-color: transparent;
+      color: slategrey;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+  
+  ::ng-deep.mat-mdc-menu-item {
+    font-size: 12px !important;
+    min-height: 20px !important;
+    margin: 5px !important;
+  }

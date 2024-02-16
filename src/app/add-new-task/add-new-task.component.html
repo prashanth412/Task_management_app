@@ -1,0 +1,62 @@
+<div class="modal">
+    <div class="modal-content">
+      <div style="display: flex;">
+        <h2>Add New Task</h2>
+      <button style=" height: 33px;
+      margin-top: 10px;
+      margin-left: 54%; background-color: red;"(click)="closeModal()">close</button>
+      </div>
+      
+      <!-- <form (ngSubmit)="onSubmit()">
+        <label for="title">Title:</label>
+        <input type="text" id="title" [(ngModel)]="task.title" required>
+  
+        <label for="description">Description:</label>
+        <textarea id="description" [(ngModel)]="task.description"></textarea>
+        <label for="priorityLevel">Priority Level:</label>
+        <textarea id="description" [(ngModel)]="task.priorityLevel"></textarea>
+        <label for="status">Status:</label>
+        <textarea id="description" [(ngModel)]="task.status"></textarea>
+        <label for="dueDate">DueDate:</label>
+        <textarea id="description" [(ngModel)]="task.dueDate"></textarea>
+  
+        <button type="submit">Add Task</button>
+      </form> -->
+
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div>
+          <label for="title">title:</label>
+          <input type="text" id="title" formControlName="title">
+          <!-- <div *ngIf="userForm.get('title').hasError('required')">
+            Title is required.
+          </div> -->
+        </div>
+    
+        <div>
+          <label for="description">Description:</label>
+          <input type="text" id="description" formControlName="description">
+          <!-- <div *ngIf="userForm.get('description').hasError('required')">
+            Description is required.
+          </div> -->
+        </div>
+        <div>
+          <label for="priorityLevel">priority Level:</label>
+          <input type="text" id="priorityLevel" formControlName="priorityLevel">
+          <!-- <div *ngIf="userForm.get('priorityLevel').hasError('required')">
+            Priority Level is required.
+          </div> -->
+        </div>
+        <div>
+          <label for="dueDate">Due Date:</label>
+          <input type="dueDate" id="dueDate" formControlName="dueDate">
+          <!-- <div *ngIf="userForm.get('dueDate').hasError('required')">
+            Due Date is required.
+          </div> -->
+        </div>
+    
+        <!-- Add more form controls as needed -->
+    
+        <button type="submit" >Update Profile</button>
+      </form>
+    </div>
+  </div>

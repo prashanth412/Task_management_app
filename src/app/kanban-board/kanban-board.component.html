@@ -1,0 +1,51 @@
+<!-- <div class="kanban-board">
+    <div class="kanban-column" >
+      <h2>To Do</h2>
+      <div class="task-list" *ngFor="let task of tasks" cdkDropList [cdkDropListData]="tasks" cdkDrag>
+        <div *ngIf="task.status === 'Open'">
+        {{ task.title }}
+      </div>
+    </div>
+    </div>
+    <div class="kanban-column" >
+      <h2>In Progress</h2>
+      <div class="task-list" *ngFor="let task of tasks" cdkDropList [cdkDropListData]="tasks" cdkDrag>
+        <div *ngIf="task.status === 'inprogress'">
+        {{ task.title }}
+      </div>
+    </div>
+    </div>
+    <div class="kanban-column">
+      <h2>Done</h2>
+      <div class="task-list" *ngFor="let task of tasks" cdkDropList [cdkDropListData]="tasks" cdkDrag>
+        <div *ngIf="task.status === 'done'">
+        {{ task.title }}
+      </div>
+    </div>
+    </div>
+  </div> -->
+<div style="display: flex;">
+  <div class="kanban-board">
+    <div class="column" (dragover)="onDragOver($event)" (drop)="onDrop($event, 'Open')">
+        <h2>To Do</h2>
+        <div class="task" draggable="true" *ngFor="let item of filterStatus('Open')" (dragstart)="onDragStart(item)">{{item.title}}
+          <br>
+          {{item.description}}
+        </div>
+    </div>
+    <div class="column" (dragover)="onDragOver($event)" (drop)="onDrop($event, 'inprogress')">
+        <h2>In Progress</h2>
+        <div class="task" draggable="true" *ngFor="let item of filterStatus('inprogress')" (dragstart)="onDragStart(item)">{{item.title}}
+          <br>
+          {{item.description}}
+        </div>
+    </div>
+    <div class="column" (dragover)="onDragOver($event)"(drop)="onDrop($event, 'completed')">
+        <h2>Done</h2>
+        <div class="task" draggable="true" *ngFor="let item of filterStatus('completed')" (dragstart)="onDragStart(item)" >{{item.title}}
+          <br>
+          {{item.description}}
+        </div>
+    </div>
+</div>
+</div>
